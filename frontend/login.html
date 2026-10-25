@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Entrar</title>
+  <link rel="stylesheet" href="styles/style.css">
+  <script src="scripts/auth.js" defer></script>
+</head>
+<body>
+  <main class="card">
+    <div class="eyebrow">ÁREA DO USUÁRIO</div>
+    <h1>Bem-vindo de volta</h1>
+    <p class="subtitle">Entre com sua conta para testar a autenticação.</p>
+
+    <form id="loginForm">
+      <label for="email">E-mail</label>
+      <input id="email" name="email" type="email" autocomplete="email" placeholder="voce@exemplo.com" required>
+      <label for="senha">Senha</label>
+      <input id="password" name="password" type="password" autocomplete="current-password" placeholder="Sua senha" required>
+      <button type="submit">Entrar</button>
+    </form>
+
+    <div id="mensagem" class="message" role="status" aria-live="polite"></div>
+    <section class="session-box">
+      <h2>Teste de sessão</h2>
+      <button id="meButton" class="secondary" type="button">Verificar /auth/me</button>
+      <button id="logoutButton" class="secondary" type="button">Sair (logout)</button>
+      <pre id="resultado" hidden></pre>
+    </section>
+    <p class="footer">Ainda não tem conta? <a href="registrar.html">Criar conta</a></p>
+  </main>
+</body>
+</html>

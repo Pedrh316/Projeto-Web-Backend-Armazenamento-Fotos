@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fotos | Acervo</title>
+<link rel="stylesheet" href="styles/app.css">
+<script src="scripts/app.js" defer></script>
+</head>
+<body data-page="photos">
+<header class="topbar">
+    <a class="brand" href="index.html"><span class="brand-mark">A</span><span>acervo<span class="brand-dot">.</span></span></a>
+    <nav class="main-nav" aria-label="Navegação principal">
+    <a href="index.html">Início</a>
+    <a href="albuns.html">Álbuns</a>
+    <a class="active" href="fotos.html">Fotos</a>
+    </nav>
+    <button class="button button-quiet logout-button" type="button" data-logout>Sair</button>
+</header>
+<main class="page-shell">
+    <section class="page-intro">
+    <h1>Fotos</h1>
+    <p class="intro">Cadastre e gerencie suas fotos.</p>
+    <p class="signed-in">Biblioteca de <strong data-user-name>...</strong></p>
+    </section>
+    <section class="content-section resource-section" aria-labelledby="fotoFormTitle">
+    <div class="section-heading"><h2 id="fotoFormTitle">Fotos cadastradas</h2></div>
+    <div class="management-grid">
+        <form id="fotoForm" class="editor-form">
+        <h3 data-form-heading>Nova foto</h3>
+        <input name="id" type="hidden">
+        <label>Título<input name="titulo" placeholder="Título da foto" required></label>
+        <label>URL da imagem<input name="url" type="url" placeholder="https://..." required></label>
+        <label>Descrição<textarea name="descricao" rows="4" placeholder="Conte um pouco sobre esta imagem"></textarea></label>
+        <div class="form-actions"><button class="button button-primary" type="submit" data-submit-label>Adicionar foto <span aria-hidden="true">&#8594;</span></button><button class="button button-quiet" type="button" data-cancel-edit hidden>Cancelar</button></div>
+        </form>
+        <div class="list-column">
+        <div class="list-heading"><button class="button button-quiet" type="button" data-refresh>Atualizar</button></div>
+        <ul id="fotos" class="photo-grid" aria-live="polite"></ul>
+        </div>
+    </div>
+    </section>
+    <p id="mensagem" class="notice" role="status" aria-live="polite"></p>
+</main>
+<footer class="site-footer"><a href="index.html">Voltar ao início</a></footer>
+</body>
+</html>

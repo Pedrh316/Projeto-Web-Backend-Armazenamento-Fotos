@@ -1,0 +1,6 @@
+para interagir com o mongo no docker:
+docker exec -it mongo_audio_service mongosh -u admin -p utfpr --authenticationDatabase admin   
+windows -> docker engine -> linux -> container mongo (que contem o mongosh)
+
+dando npm init no docker
+docker compose exec node

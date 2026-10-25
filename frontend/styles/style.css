@@ -1,0 +1,150 @@
+:root {
+	color-scheme: light;
+	font-family: Arial, sans-serif;
+	color: #222;
+	background: #f4f4f4;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	display: grid;
+	min-height: 100vh;
+	margin: 0;
+	padding: 16px;
+	place-items: center;
+	background: #f4f4f4;
+}
+
+.card {
+	width: min(100%, 420px);
+	padding: 24px;
+	border: 1px solid #ccc;
+	background: #fff;
+}
+
+.eyebrow {
+	margin: 0;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+h1 {
+	margin: 10px 0 8px;
+	font-size: 26px;
+}
+
+.subtitle {
+	margin: 0 0 20px;
+	color: #555;
+	font-size: 14px;
+	line-height: 1.5;
+}
+
+form {
+	display: grid;
+	gap: 9px;
+}
+
+label {
+	margin-top: 5px;
+	font-size: 13px;
+	font-weight: bold;
+}
+
+input {
+	width: 100%;
+	margin-top: 5px;
+	padding: 9px;
+	border: 1px solid #999;
+	font: inherit;
+}
+
+input:focus {
+	outline: 2px solid #555;
+	outline-offset: 1px;
+}
+
+button {
+	width: 100%;
+	margin-top: 10px;
+	padding: 9px 12px;
+	border: 1px solid #222;
+	background: #222;
+	color: #fff;
+	font: inherit;
+	cursor: pointer;
+}
+
+button:hover {
+	background: #444;
+}
+
+.secondary {
+	border-color: #999;
+	background: #eee;
+	color: #222;
+}
+
+.secondary:hover {
+	background: #ddd;
+}
+
+.message {
+	min-height: 20px;
+	margin-top: 14px;
+	font-size: 13px;
+	overflow-wrap: anywhere;
+}
+
+.success,
+.error {
+	color: #222;
+	font-weight: bold;
+}
+
+.session-box {
+	margin-top: 18px;
+	padding-top: 15px;
+	border-top: 1px solid #ccc;
+}
+
+h2 {
+	margin: 0 0 5px;
+	font-size: 14px;
+}
+
+pre {
+	max-height: 220px;
+	overflow: auto;
+	padding: 12px;
+	border: 1px solid #ccc;
+	background: #f4f4f4;
+	font-size: 12px;
+	white-space: pre-wrap;
+	overflow-wrap: anywhere;
+}
+
+.footer {
+	margin: 22px 0 0;
+	text-align: center;
+	color: #555;
+	font-size: 13px;
+}
+
+a {
+	color: #222;
+	font-weight: bold;
+}
+
+@media (max-width: 480px) {
+	.card {
+		padding: 20px 16px;
+	}
+
+	h1 {
+		font-size: 23px;
+	}
+}

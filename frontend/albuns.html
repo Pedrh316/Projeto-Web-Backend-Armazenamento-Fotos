@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Álbuns | Acervo</title>
+<link rel="stylesheet" href="styles/app.css">
+<script src="scripts/app.js" defer></script>
+</head>
+<body data-page="albums">
+<header class="topbar">
+    <a class="brand" href="index.html"><span class="brand-mark">A</span><span>acervo<span class="brand-dot">.</span></span></a>
+    <nav class="main-nav" aria-label="Navegação principal">
+    <a href="index.html">Início</a>
+    <a class="active" href="albuns.html">Álbuns</a>
+    <a href="fotos.html">Fotos</a>
+    </nav>
+    <button class="button button-quiet logout-button" type="button" data-logout>Sair</button>
+</header>
+<main class="page-shell">
+    <section class="page-intro">
+    <h1>Álbuns</h1>
+    <p class="intro">Cadastre e gerencie seus álbuns.</p>
+    <p class="signed-in">Biblioteca de <strong data-user-name>...</strong></p>
+    </section>
+    <section class="content-section resource-section" aria-labelledby="albumFormTitle">
+    <div class="section-heading"><h2 id="albumFormTitle">Álbuns cadastrados</h2></div>
+    <div class="management-grid">
+        <form id="albumForm" class="editor-form">
+        <h3 data-form-heading>Novo álbum</h3>
+        <input name="id" type="hidden">
+        <label>Nome<input name="nome" placeholder="Ex.: Viagem de verão" required></label>
+        <label>Descrição<textarea name="descricao" rows="4" placeholder="Uma breve descrição da coleção"></textarea></label>
+        <div class="form-actions"><button class="button button-primary" type="submit" data-submit-label>Criar álbum <span aria-hidden="true">&#8594;</span></button><button class="button button-quiet" type="button" data-cancel-edit hidden>Cancelar</button></div>
+        </form>
+        <div class="list-column">
+        <div class="list-heading"><button class="button button-quiet" type="button" data-refresh>Atualizar</button></div>
+        <ul id="albuns" class="record-list" aria-live="polite"></ul>
+        </div>
+    </div>
+    </section>
+    <section class="content-section resource-section" aria-labelledby="fotosAlbumTitle">
+    <div class="section-heading"><h2 id="fotosAlbumTitle">Fotos nos álbuns</h2></div>
+    <div class="management-grid">
+        <form id="adicionarFotoAlbum" class="editor-form">
+        <h3>Adicionar foto</h3>
+        <label>Álbum<select name="albumId" required><option value="">Selecione um álbum</option></select></label>
+        <label>Foto<select name="fotoId" required><option value="">Selecione uma foto</option></select></label>
+        <button class="button button-primary" type="submit">Adicionar ao álbum</button>
+        </form>
+        <form id="removerFotoAlbum" class="editor-form">
+        <h3>Remover foto</h3>
+        <label>Álbum<select name="albumId" required><option value="">Selecione um álbum</option></select></label>
+        <label>Foto<select name="fotoId" required><option value="">Selecione um álbum primeiro</option></select></label>
+        <button class="button button-primary" type="submit">Remover do álbum</button>
+        </form>
+    </div>
+    </section>
+        <div id="albumModal" class="modal-overlay" hidden>
+            <section class="modal" role="dialog" aria-modal="true" aria-labelledby="albumModalTitle">
+                <div class="modal-heading">
+                    <h2 id="albumModalTitle">Fotos do álbum</h2>
+                    <button id="fecharAlbumModal" class="modal-close" type="button" aria-label="Fechar">&times;</button>
+                </div>
+                <ul id="albumModalFotos" class="album-photo-list"></ul>
+            </section>
+        </div>
+    <p id="mensagem" class="notice" role="status" aria-live="polite"></p>
+</main>
+<footer class="site-footer"><a href="index.html">Voltar ao início</a></footer>
+</body>
+</html>

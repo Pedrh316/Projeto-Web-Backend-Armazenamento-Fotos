@@ -1,0 +1,66 @@
+
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Painel | Acervo</title>
+  <link rel="stylesheet" href="styles/app.css">
+  <script src="scripts/app.js" defer></script>
+</head>
+<body data-page="home">
+  <header class="topbar">
+    <a class="brand" href="index.html"><span class="brand-mark">A</span><span>acervo<span class="brand-dot">.</span></span></a>
+    <nav class="main-nav" aria-label="Navegação principal">
+      <a class="active" href="index.html">Início</a>
+      <a href="albuns.html">Álbuns</a>
+      <a href="fotos.html">Fotos</a>
+    </nav>
+    <button class="button button-quiet logout-button" type="button" data-logout>Sair</button>
+  </header>
+
+  <main class="page-shell">
+    <section class="welcome-band">
+      <div>
+        <h1>Gerenciador de fotos</h1>
+        <p class="intro">Gerencie usuários, álbuns e fotos.</p>
+        <p class="signed-in">Conectado como <strong id="nomeUsuario">...</strong></p>
+      </div>
+      <div class="quick-links" aria-label="Acessos rápidos">
+        <a class="quick-link" href="albuns.html"><strong>Ver álbuns</strong><span class="arrow">&#8594;</span></a>
+        <a class="quick-link" href="fotos.html"><strong>Ver fotos</strong><span class="arrow">&#8594;</span></a>
+      </div>
+    </section>
+
+    <section class="content-section" aria-labelledby="usuariosTitulo">
+      <div class="section-heading">
+        <h2 id="usuariosTitulo">Usuários</h2>
+      </div>
+      <div class="management-grid">
+        <div class="form-column">
+          <form id="formUsuario" class="editor-form">
+            <h3>Cadastrar usuário</h3>
+            <label>Nome<input name="nome" autocomplete="name" placeholder="Nome completo" required></label>
+            <label>E-mail<input name="email" type="email" autocomplete="email" placeholder="nome@exemplo.com" required></label>
+            <label>Senha<input name="password" type="password" autocomplete="new-password" minlength="8" placeholder="Mínimo de 8 caracteres" required></label>
+            <button class="button button-primary" type="submit">Cadastrar usuário <span aria-hidden="true">&#8594;</span></button>
+          </form>
+          <form id="editarUsuario" class="editor-form edit-form" hidden>
+            <h3>Editar usuário</h3>
+            <input name="id" type="hidden">
+            <label>Nome<input name="nome" autocomplete="name" required></label>
+            <label>E-mail<input name="email" type="email" autocomplete="email" required></label>
+            <div class="form-actions"><button class="button button-primary" type="submit">Salvar alterações</button><button class="button button-quiet" type="button" data-cancel-edit>Cancelar</button></div>
+          </form>
+        </div>
+        <div class="list-column">
+          <div class="list-heading"><h3>Usuários cadastrados</h3><button class="button button-quiet" type="button" data-refresh>Atualizar</button></div>
+          <ul id="usuarios" class="record-list" aria-live="polite"></ul>
+        </div>
+      </div>
+    </section>
+    <p id="mensagem" class="notice" role="status" aria-live="polite"></p>
+  </main>
+  <footer class="site-footer"><span>Gerenciador de fotos</span></footer>
+</body>
+</html>
